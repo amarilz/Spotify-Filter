@@ -6,6 +6,8 @@ __pycache__/
 # C extensions
 *.so
 
+.coveragerc
+
 # Distribution / packaging
 .Python
 build/
@@ -23,6 +25,7 @@ wheels/
 pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
+.idea/
 .installed.cfg
 *.egg
 MANIFEST
