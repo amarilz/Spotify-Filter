@@ -53,8 +53,7 @@ def get_songs_of_block_playlist(client_id: str, client_secret: str, playlist_id:
         if len(response['items']) == 0:
             # Obtained all songs of block playlist
             break
-        else:
-            for i in response['items']:
-                result.append(get_song_in_dictionary(i))
-            offset = offset + len(response['items'])
+        for i in response['items']:
+            result.append(get_song_in_dictionary(i))
+        offset = offset + len(response['items'])
     return result

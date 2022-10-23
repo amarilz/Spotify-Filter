@@ -2,7 +2,7 @@ import spotipy
 from spotipy import SpotifyException
 from spotipy.oauth2 import SpotifyOAuth
 
-scope = 'playlist-modify-public'
+SCOPE = 'playlist-modify-public'
 
 
 def add_songs(sp: spotipy.Spotify, new_song_ids: list, playlist_id: str) -> None:
@@ -30,7 +30,7 @@ def add_new_songs_in_playlist(new_song_ids: list, client_id: str, client_secret:
     sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
         client_id=client_id,
         client_secret=client_secret,
-        scope=scope,
+        scope=SCOPE,
         redirect_uri='https://www.google.com/'))
 
     try:
