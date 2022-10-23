@@ -2,7 +2,7 @@ import json
 import os.path
 
 
-def load_listened_from_json():
+def load_listened_from_json() -> list:
     """
     Load the list of listened songs from file (listened.json)
     :return: List of songs played in which each string follows the pattern: {artist_name}{song_title}
@@ -12,16 +12,16 @@ def load_listened_from_json():
     return result
 
 
-def save_listened(listened_songs):
+def save_listened(listened_songs: list) -> None:
     """
     Update the list of listened songs
-    :param listened_songs:
+    :param listened_songs: List of songs listened (to save)
     """
     with open(os.path.dirname(__file__) + '/../listened.json', "w+", encoding='utf-8') as file:
         json.dump(sorted(listened_songs), file, indent=2)
 
 
-def get_formatted_songs_of_block_playlist(songs_in_block_playlist):
+def get_formatted_songs_of_block_playlist(songs_in_block_playlist: list) -> list:
     """
     This function returns a list that contains a list of two elements:
       - artist name combined with the track name
@@ -37,7 +37,7 @@ def get_formatted_songs_of_block_playlist(songs_in_block_playlist):
     return result
 
 
-def get_list_new_songs(list_block_songs_formatted, list_blocked_songs_json):
+def get_list_new_songs(list_block_songs_formatted: list, list_blocked_songs_json: list) -> list:
     """
     Get a list of new songs (never listened). Check if a new songs is already in the listened.json file
     :param list_block_songs_formatted: List of songs in block playlist formatted for comparison
@@ -51,7 +51,7 @@ def get_list_new_songs(list_block_songs_formatted, list_blocked_songs_json):
     return result
 
 
-def remove_listened_songs(songs_in_block_playlist):
+def remove_listened_songs(songs_in_block_playlist: list) -> list:
     """
     Check if in the block playlist there are songs already listened. Return the ids of new songs.
     :param songs_in_block_playlist: List of songs in block playlist
