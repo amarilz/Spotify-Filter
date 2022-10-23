@@ -1,3 +1,9 @@
+# Spotify API KEY
+src/config.py
+
+# Coverage config
+.coveragerc
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -5,8 +11,6 @@ __pycache__/
 
 # C extensions
 *.so
-
-.coveragerc
 
 # Distribution / packaging
 .Python
