@@ -4,8 +4,9 @@ Tired of listening to the same songs over and over again?
 
 ### How it works
 
-Just create two playlists on spotify. One that will act as a filter and one from which to listen only new songs. Add all
-the songs you want to listen to in the **BLock** playlist.
+Just create two playlists on spotify (**Block**, **Listen**). One that will act as a filter and one from which to listen
+only new songs. Add all
+the songs you want to listen to in the **Block** playlist.
 Now you run Spotify Filter. The songs in **Block** playlist will be compared with those in the `listened.json` file (
 which contains the songs already listened to). If they were already present (already listened) they will be filtered.
 The new ones, on the other hand, will be moved to the **Listen** playlist, on which you will always find only new
