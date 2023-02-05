@@ -1,6 +1,9 @@
 # Spotify API KEY
 src/config.py
 
+# Listened songs
+listened.json
+
 # Coverage config
 .coveragerc
 
