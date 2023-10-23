@@ -4,15 +4,17 @@ from spotipy.oauth2 import SpotifyOAuth
 
 SCOPE = 'playlist-modify-public'
 
-
 def add_songs(sp: spotipy.Spotify, new_song_ids: list, playlist_id: str) -> None:
     """
-    Add new songs to specified playlist. Spotify API PUT (REST) is limited to 100 songs at a time.
+    Add new songs to the specified playlist. Spotify API PUT (REST) is limited to 100 songs at a time.
     :param sp: Spotify client connection
     :param new_song_ids: List of new song ids
     :param playlist_id: Playlist in which to insert the songs
     :return:
     """
+    # Remove "None" values from new_song_ids and print what was removed
+    new_song_ids = [song_id for song_id in new_song_ids if song_id is not None]
+
     # Check if there are more songs to add
     while len(new_song_ids) != 0:
         sp.playlist_add_items(playlist_id, new_song_ids[0:100])
