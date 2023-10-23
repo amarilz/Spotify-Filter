@@ -15,6 +15,9 @@ def get_song_in_dictionary(song: dict) -> dict:
         raise TypeError("Dictionary is None")
     if not song:
         raise TypeError("Dictionary is empty")
+    if song['track'] is None:
+        print("This song is broken...")
+        return None
     artist = song['track']['artists'][0]['name']
     title = song['track']['name']
     song_id = song['track']['id']
@@ -54,6 +57,8 @@ def get_songs_of_block_playlist(client_id: str, client_secret: str, playlist_id:
             # Obtained all songs of block playlist
             break
         for i in response['items']:
-            result.append(get_song_in_dictionary(i))
+            canzone = get_song_in_dictionary(i)
+            if canzone is not None:
+                result.append(canzone)
         offset = offset + len(response['items'])
     return result
