@@ -77,7 +77,7 @@ public class PlaylistSyncRunner implements CommandLineRunner {
                 .collect(Collectors.toSet());
     }
 
-    private void addTracksToPlaylist(String playlistId, Set<LocalTrack> localTracks) throws IOException, SpotifyWebApiException, org.apache.hc.core5.http.ParseException {
+    private void addTracksToPlaylist(String playlistId, @NotNull Set<LocalTrack> localTracks) throws IOException, SpotifyWebApiException, org.apache.hc.core5.http.ParseException {
         final int BATCH_SIZE = 100;
         List<String> uris = localTracks.stream()
                 .map(LocalTrack::getSpotifySongUri)
